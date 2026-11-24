@@ -1,0 +1,48 @@
+
+---
+title: "Analysis Report"
+format: html
+html-table-processing: none
+code-fold: true
+---
+
+### Setup
+
+```{r}
+#| message: false
+library(palmerpenguins)
+library(tidyverse)
+```
+
+
+## Background
+
+The Palmer Penguins dataset contains measurements of penguins' flippers, bills, and body mass.
+
+
+## Methods
+
+We used a multiple regression analysis to examine the effect of penguin species and bill depth on body mass.
+
+
+## Results
+
+```{r}
+m <- lm(body_mass_g ~ species + bill_depth_mm, data = penguins)
+gtsummary::tbl_regression(m, intercept = TRUE)
+```
+
+After adjusting for penguin species, we found a significant effect of bill depth.
+
+```{r}
+ggeffects::ggpredict(
+  m, terms = c("bill_depth_mm", "species")
+) |>
+  plot() +
+  theme_classic()
+```
+
+
+## Discussion
+
+Penguins have different sizes!

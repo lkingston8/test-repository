@@ -1,5 +1,40 @@
 [
   {
+    "objectID": "Reports/analysis.html",
+    "href": "Reports/analysis.html",
+    "title": "Analysis Report",
+    "section": "",
+    "text": "Code\nlibrary(palmerpenguins)\nlibrary(tidyverse)"
+  },
+  {
+    "objectID": "Reports/analysis.html#background",
+    "href": "Reports/analysis.html#background",
+    "title": "Analysis Report",
+    "section": "Background",
+    "text": "Background\nThe Palmer Penguins dataset contains measurements of penguins’ flippers, bills, and body mass."
+  },
+  {
+    "objectID": "Reports/analysis.html#methods",
+    "href": "Reports/analysis.html#methods",
+    "title": "Analysis Report",
+    "section": "Methods",
+    "text": "Methods\nWe used a multiple regression analysis to examine the effect of penguin species and bill depth on body mass."
+  },
+  {
+    "objectID": "Reports/analysis.html#results",
+    "href": "Reports/analysis.html#results",
+    "title": "Analysis Report",
+    "section": "Results",
+    "text": "Results\n\n\nCode\nm &lt;- lm(body_mass_g ~ species + bill_depth_mm, data = penguins)\ngtsummary::tbl_regression(m, intercept = TRUE)\n\n\n\n\n\n  \n    \n      Characteristic\n      Beta\n      95% CI\n      p-value\n    \n  \n  \n    (Intercept)\n-1,007\n-1,644, -371\n0.002\n    species\n\n\n\n        Adelie\n—\n—\n\n        Chinstrap\n13\n-91, 118\n0.8\n        Gentoo\n2,239\n2,094, 2,384\n&lt;0.001\n    bill_depth_mm\n257\n222, 291\n&lt;0.001\n  \n  \n    \n      Abbreviation: CI = Confidence Interval\n    \n  \n\n\n\n\nAfter adjusting for penguin species, we found a significant effect of bill depth.\n\n\nCode\nggeffects::ggpredict(\n  m, terms = c(\"bill_depth_mm\", \"species\")\n) |&gt;\n  plot() +\n  theme_classic()"
+  },
+  {
+    "objectID": "Reports/analysis.html#discussion",
+    "href": "Reports/analysis.html#discussion",
+    "title": "Analysis Report",
+    "section": "Discussion",
+    "text": "Discussion\nPenguins have different sizes!"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Home Page",
@@ -7,10 +42,38 @@
     "text": "This is the home page for my new website"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "docs/reports/analysis.html",
+    "href": "docs/reports/analysis.html",
+    "title": "Analysis Report",
     "section": "",
-    "text": "This is my website’s about page! Read more about my website here!"
+    "text": "Code\nlibrary(palmerpenguins)\nlibrary(tidyverse)"
+  },
+  {
+    "objectID": "docs/reports/analysis.html#background",
+    "href": "docs/reports/analysis.html#background",
+    "title": "Analysis Report",
+    "section": "Background",
+    "text": "Background\nThe Palmer Penguins dataset contains measurements of penguins’ flippers, bills, and body mass."
+  },
+  {
+    "objectID": "docs/reports/analysis.html#methods",
+    "href": "docs/reports/analysis.html#methods",
+    "title": "Analysis Report",
+    "section": "Methods",
+    "text": "Methods\nWe used a multiple regression analysis to examine the effect of penguin species and bill depth on body mass."
+  },
+  {
+    "objectID": "docs/reports/analysis.html#results",
+    "href": "docs/reports/analysis.html#results",
+    "title": "Analysis Report",
+    "section": "Results",
+    "text": "Results\n\n\nCode\nm &lt;- lm(body_mass_g ~ species + bill_depth_mm, data = penguins)\ngtsummary::tbl_regression(m, intercept = TRUE)\n\n\n\n\n\n  \n    \n      Characteristic\n      Beta\n      95% CI\n      p-value\n    \n  \n  \n    (Intercept)\n-1,007\n-1,644, -371\n0.002\n    species\n\n\n\n        Adelie\n—\n—\n\n        Chinstrap\n13\n-91, 118\n0.8\n        Gentoo\n2,239\n2,094, 2,384\n&lt;0.001\n    bill_depth_mm\n257\n222, 291\n&lt;0.001\n  \n  \n    \n      Abbreviation: CI = Confidence Interval\n    \n  \n\n\n\n\nAfter adjusting for penguin species, we found a significant effect of bill depth.\n\n\nCode\nggeffects::ggpredict(\n  m, terms = c(\"bill_depth_mm\", \"species\")\n) |&gt;\n  plot() +\n  theme_classic()"
+  },
+  {
+    "objectID": "docs/reports/analysis.html#discussion",
+    "href": "docs/reports/analysis.html#discussion",
+    "title": "Analysis Report",
+    "section": "Discussion",
+    "text": "Discussion\nPenguins have different sizes!"
   }
 ]
